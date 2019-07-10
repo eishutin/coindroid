@@ -7,7 +7,7 @@ module.exports = {
 
   attributes: {
 
-    id: {type: 'string'},
+    name: {type: 'string'},
     container: {type: 'json'}
   },
 

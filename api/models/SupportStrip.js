@@ -10,7 +10,7 @@ module.exports = {
     header: {type: 'string'},
     mainText: {type: 'string'},
     buttonText: {type: 'string'},
-    urlImage: {type: 'string'}
+    urlButton: {type: 'string'}
 
   },
 
