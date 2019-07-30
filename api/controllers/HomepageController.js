@@ -154,11 +154,11 @@ module.exports = {
         referalText1:'referal system give you 10% from deal and get you referaller 10%',
         referalText2:'* Deposits are made after three wallets',
         referalPlaceholder:'Get referal',
-        orangeStripText:'IF YOU HAVE ANOTHER OFFER ABOUT THE WORK, JUST EMAIL US',
         supportStrip:support,
         supportStripImg:'images/img-support-mobile.png',
         ourWorksHead:'OUR WORKS',
         ourWorksStrip:ourWorks,
+        justEmailText:'IF YOU HAVE ANOTHER OFFER ABOUT THE WORK, JUST EMAIL US',
         downlIcon:'icon icon-email-orange',
         downlIconMessage:'Ваш e-mail был отправлен!'
       });
