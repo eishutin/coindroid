@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns:style="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Coindroid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono:300,400,700&display=swap&subset=cyrillic-ext"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/media.css">
+  <script src="scripts/jquery-3.4.1.min.js"></script>
+  <script src="scripts/slick.min.js"></script>
+  <script src="scripts/jquery.paroller.min.js"></script>
+  <script src="scripts/parallax.min.js"></script>
+  <script src="scripts/jquery.fancybox.min.js"></script>
+  <script src="scripts/jquery.sticky-kit.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="/" class="logo">
+      <img src=<%= urlimg1 %> alt="Coindroid">
+    </a>
+    <button class="toggle-nav"></button>
+    <nav class="main-nav">
+      <i class="icon icon-close"></i>
+      <ul>
+        <li class="dropdown">
+          <% for(var i = 0; i < upNavigation.container.length;i++){ %>
+            <% if(upNavigation.container[i].children){ %>
+              <a href=<%= upNavigation.container[i].link %>> <%= upNavigation.container[i].label %> </a>
+              <ul class="sub-nav">
+                <% for(var j = 0; j < upNavigation.container[i].children.length;j++){ %>
+                  <li><a
+                      class=<%= upNavigation.container[i].children[j].isActive %> href=<%= upNavigation.container[i].children[j].link %>><%= upNavigation.container[i].children[j].label %></a>
+                  </li>
+                <% } %>
+              </ul>
+        </li>
+        <% } else{ %>
+          <li><a href=<%= upNavigation.container[i].link %>>  <%= upNavigation.container[i].label %>  </a></li>
+        <% }} %>
+      </ul>
+      <div class="select-wrap select-lang">
+        <i class="icon icon-close"></i>
+        <div class="current-lang">
+          <input type="text" class="lang" value="ENG" disabled>
+        </div>
+        <div class="list-lang">
+          <ul>
+            <li><a href=<%= rusUrl %>><%= rusLang %>></a></li>
+            <li><a href=<%= espUrl %>><%= espLang %>></a></li>
+            <li><a href=<%= gerUrl %>><%= gerLang %>></a></li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-login">Login</button>
+      <div class="user hide">
+        <i class="icon icon-user"></i>
+        <span>Peter Parker</span>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="content">
+  <div class="block-top">
+    <div class="img-parallax-top">
+      <div class="wrap">
+        <h1 class="title"><%= mainText1 %> <span class="color-orange"><%= mainText2 %></span></h1>
+        <ul class="social">
+          <li><a href=<%= twitterUrl %> class="<%= twitterClass %>"></a></li>
+          <li><a href=<%= facebookUrl %> class="<%= facebookClass %>"></a></li>
+          <li><a href=<%= soc2Url %> class="<%= soc2Class %>"></a></li>
+          <li><a href=<%= telegramUrl %> class="<%= telegramClass %>"></a></li>
+          <li><a href=<%= youtubeUrl %> class="<%= youtubeClass %>"></a></li>
+          <li><a href=<%= viberUrl %> class="<%= viberClass %>"></a></li>
+          <li><a href=<%= socUrl %> class="<%= socClass %>"></a></li>
+          <li><a href=<%= emailUrl %> class="<%= emailClass %>"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block block-perform">
+    <div class="wrap">
+      <div class="slider-perform">
+        <% for (var k = 0;k < possibilityStrip.length;k++) { %>
+          <div class="slide" id1="<%= k %>">
+            <div class="slide-img">
+              <i class="<%= possibilityStrip[k].urlImg %>"></i>
+            </div>
+            <div class="slide-text">
+              <%= possibilityStrip[k].text %>
+            </div>
+            <div class="pop-text" id1="perform-pop-text-<%=k%>">
+              <%=possibilityStrip[k].popText%>
+            </div>
+            <div class="pop-img" id1="perform-pop-img-<%=k%>">
+              <%=possibilityStrip[k].popImg%>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="perform-info">
+      <div class="wrap">
+        <div class="info-text">
+          <span class="color-orange" id="perform-info-text"></span>
+        </div>
+        <img id="perform-info-image" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block block-referal">
+    <div class="wrap">
+      <div class="col col-info">
+        <div class="title title-small">
+          <span class="color-orange"><%=referalText1%></span>
+        </div>
+        <p class="caption"><%=referalText2%></p>
+      </div>
+      <div class="col col-form">
+        <div class="form-group">
+          <input type="text" name="referal" class="form-control" placeholder="<%=referalPlaceholder%>">
+          <button class="btn btn-download" data-fancybox data-src="#modal-email"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block block-wallet">
+    <div class="wrap">
+      <div class="col col-left">
+        <div class="fixed-left">
+          <div class="side-nav">
+            <ul>
+              <li class="sub-item">
+                <a href="#">Android wallet</a>
+                <ul class="sub-nav">
+                  <li><a href="#">Coinomi (Electrum)</a></li>
+                  <li><a href="#">BreadWallet</a></li>
+                  <li><a href="#">Copay</a></li>
+                </ul>
+              </li>
+              <li class="sub-item">
+                <a href="#">IOS wallet</a>
+                <ul class="sub-nav">
+                  <li><a href="#">BreadWallet</a></li>
+                  <li><a href="#">Classic Electrum IOS</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Electrum server</a></li>
+              <li><a href="#">DAG chain</a></li>
+              <li><a href="#">Blockchain</a></li>
+            </ul>
+          </div>
+          <div class="mobile-select custom-select">
+            <div class="value">Android wallet</div>
+            <ul>
+              <li class="sub-item">
+                <a href="#">Android wallet</a>
+                <ul class="sub-nav">
+                  <li><a href="#">Coinomi (Electrum)</a></li>
+                  <li><a href="#">BreadWallet</a></li>
+                  <li><a href="#">Copay</a></li>
+                </ul>
+              </li>
+              <li class="sub-item">
+                <a href="#">IOS wallet</a>
+                <ul class="sub-nav">
+                  <li><a href="#">BreadWallet</a></li>
+                  <li><a href="#">Classic Electrum IOS</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Electrum server</a></li>
+              <li><a href="#">DAG chain</a></li>
+              <li><a href="#">Blockchain</a></li>
+            </ul>
+          </div>
+          <button class="btn btn-dark" data-fancybox data-src="#modal-discount-code">I have discount code</button>
+        </div>
+      </div>
+      <div class="col col-center">
+        <div class="text-wrap">
+          <div class="title title-small">ANDROID <span class="color-orange">WALLET</span></div>
+          <div class="price">
+            <div class="current-price">500$</div>
+            <div class="old-price">500$</div>
+          </div>
+        </div>
+        <div class="desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Amet mauris commodo quis imperdiet. Eget egestas purus viverra accumsan in. Est
+            ullamcorper eget nulla facilisi etiam. Odio eu feugiat pretium nibh ipsum consequat nisl. Fames ac turpis
+            egestas maecenas pharetra. Justo donec enim diam vulputate ut pharetra.
+          </p>
+          <p>
+            Sem integer vitae justo eget magna. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Sit
+            amet consectetur adipiscing elit duis. Volutpat lacus laoreet non curabitur gravida arcu. Et ultrices neque
+            ornare aenean euismod elementum nisi quis eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet mauris commodo quis imperdiet.
+          </p>
+        </div>
+        <ul class="list-img">
+          <li><i class="icon icon-model"></i></li>
+          <li><i class="icon icon-model-2"></i></li>
+          <li><i class="icon icon-model"></i></li>
+          <li><i class="icon icon-model"></i></li>
+          <li><i class="icon icon-model-2"></i></li>
+        </ul>
+        <div class="group-btn">
+          <button class="btn btn-blue">Calculate price</button>
+          <div class="link-video">
+            <i class="icon icon-video"></i>
+            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="link" data-fancybox>Watch video
+              presentation</a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-right">
+        <div class="fixed-right">
+          <div class="slider-phone">
+            <div class="slide">
+              <img src="images/img-phone.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="images/img-phone.png" alt="">
+            </div>
+          </div>
+          <button class="btn btn-border">Open in simulator</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block block-contacts">
+    <div class="wrap">
+      <div class="col col-left">
+        <div class="title title-small"><%=orangeStripText%></div>
+      </div>
+      <div class="col col-right">
+        <ul class="social">
+          <li><a href=<%= twitterUrl %> class="<%= twitterClass %>"></a></li>
+          <li><a href=<%= facebookUrl %> class="<%= facebookClass %>"></a></li>
+          <li><a href=<%= soc2Url %> class="<%= soc2Class %>"></a></li>
+          <li><a href=<%= telegramUrl %> class="<%= telegramClass %>"></a></li>
+          <li><a href=<%= youtubeUrl %> class="<%= youtubeClass %>"></a></li>
+          <li><a href=<%= viberUrl %> class="<%= viberClass %>"></a></li>
+          <li><a href=<%= socUrl %> class="<%= socClass %>"></a></li>
+          <li><a href=<%= emailUrl %> class="<%= emailClass %>"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="block block-support">
+    <div class="wrap no-flex">
+      <div>
+        <div class="wrap-text">
+          <div class="title"><span class="color-orange"><%=supportStrip.head%></span></div>
+          <p class="desc">
+            <%=supportStrip.mainText%>
+          </p>
+          <form action="<%=supportStrip.urlButton%>">
+              <button class="btn" ><%=supportStrip.buttonText%></button>
+          </form>
+        </div>
+        <img src="<%=supportStripImg%>" alt="" class="img-mobile">
+      </div>
+    </div>
+  </div>
+  <div class="block block-works">
+    <div class="wrap no-flex">
+      <div class="title"><span class="color-orange"><%=ourWorksHead%></span></div>
+      <div class="list-works">
+        <%for(var z = 0; z < ourWorksStrip.length; z++){%>
+          <div class="row">
+            <%var fir_end=z+7%>
+            <%while ((z!=fir_end)&&(z!=ourWorksStrip.length)) {%>
+                <div class="item-work">
+                  <div class="tooltip">
+                    <img src="<%=ourWorksStrip[z].urlImage%>" alt="">
+                    <span class="tooltiptext"><%=ourWorksStrip[z].popText%></span>
+                  </div>
+                </div>
+              <%z++}%>
+          </div>
+            <%var sec_end=z+6%>
+              <div class="row">
+                <%while ((z!=sec_end)&&(z!=ourWorksStrip.length)) {%>
+                <div class="item-work">
+                    <div class="tooltip">
+                      <img src="<%=ourWorksStrip[z].urlImage%>" alt="">
+                      <span class="tooltiptext"><%=ourWorksStrip[z].popText%></span>
+                    </div>
+                  </div>
+                <%z++}%>
+              </div>
+        <%z--}%>
+      </div>
+    </div>
+  </div>
+  <div class="block block-info">
+    <div class="wrap">
+      <div class="title">IF YOU HAVE ANOTHER OFFER ABOUT THE WORK, JUST <a href="#">EMAIL</a> US</div>
+      <div class="img-parallax-bottom"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="col col-left">
+      <a href="/" class="logo">
+        <img src="<%=urlimg1%>" alt="Coindroid">
+      </a>
+    </div>
+    <div class="col col-center">
+      <div class="footer-nav">
+        <% for(var p = 0; p < upNavigation.container.length;p++){ %>
+        <%div3=p+3%>
+        <ul>
+          <%while((p!=div3)&&(p!=upNavigation.container.length)){%>
+            <li><a href=<%= upNavigation.container[p].link %>>  <%= upNavigation.container[p].label %>  </a></li>
+          <%p++}%>
+        </ul>
+        <%p--}%>
+
+      </div>
+      <div class="select-wrap select-lang hide">
+        <i class="icon icon-close"></i>
+        <div class="current-lang">
+          <input type="text" class="lang" value="ENG" disabled>
+        </div>
+        <div class="list-lang">
+          <ul>
+            <li><a href="#">RUS</a></li>
+            <li><a href="#">ESP</a></li>
+            <li><a href="#">GER</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col col-right">
+      <ul class="social">
+        <li><a href=<%= twitterUrl %> class="<%= twitterClass %>"></a></li>
+        <li><a href=<%= facebookUrl %> class="<%= facebookClass %>"></a></li>
+        <li><a href=<%= soc2Url %> class="<%= soc2Class %>"></a></li>
+        <li><a href=<%= telegramUrl %> class="<%= telegramClass %>"></a></li>
+        <li><a href=<%= youtubeUrl %> class="<%= youtubeClass %>"></a></li>
+        <li><a href=<%= viberUrl %> class="<%= viberClass %>"></a></li>
+        <li><a href=<%= socUrl %> class="<%= socClass %>"></a></li>
+        <li><a href=<%= emailUrl %> class="<%= emailClass %>"></a></li>
+      </ul>
+      <div class="select-wrap select-lang">
+        <i class="icon icon-close"></i>
+        <div class="current-lang">
+          <input type="text" class="lang" value="ENG" disabled>
+        </div>
+        <div class="list-lang">
+          <ul>
+            <li><a href="#">RUS</a></li>
+            <li><a href="#">ESP</a></li>
+            <li><a href="#">GER</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Modal discount code -->
+<div class="modal modal-discount-code" id="modal-discount-code">
+  <div class="modal-wrap">
+    <form action="" class="form-discount">
+      <div class="form-group">
+        <label for="code">I HAVE DISCOUNT CODE</label>
+        <input type="text" class="form-control" id="code" placeholder="code">
+      </div>
+      <div class="form-group">
+        <img src="images/recapcha.png" alt="">
+      </div>
+      <button class="btn btn-send">Apply</button>
+    </form>
+  </div>
+</div>
+<!-- Modal email -->
+<div class="modal modal-email" id="modal-email">
+  <div class="modal-wrap">
+    <i class="<%=downlIcon%>"></i>
+    <div class="text">
+      <%=downlIconMessage%>
+    </div>
+  </div>
+</div>
+<!-- Modal success -->
+<div class="modal modal-success" id="modal-success">
+  <div class="modal-wrap">
+    <i class="icon icon-success"></i>
+    <div class="text">
+      Поздравляем! Ты победил, скидка 20%
+    </div>
+  </div>
+</div>
+<!-- Modal fail -->
+<div class="modal modal-fail" id="modal-fail">
+  <div class="modal-wrap">
+    <i class="icon icon-fail"></i>
+    <div class="text">
+      Такого кода не существует!
+    </div>
+  </div>
+</div>
+<script src="scripts/scripts.js"></script>
+<script src="scripts/pop-up_block-perform_script.js"></script>
+</body>
+</html>
