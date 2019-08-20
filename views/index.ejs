@@ -31,9 +31,16 @@
       <ul>
         <li class="dropdown">
           <% for(var i = 0; i < upNavigation.container.length;i++){ %>
+
+
+              <a href=<%= upNavigation.container[i].link %>> <%=  %> </a>
+              <ul class="sub-nav">
+                <%if(upNavigation.container[i].children){%>
+
             <% if(upNavigation.container[i].children){ %>
               <a href=<%= upNavigation.container[i].link %>> <%= upNavigation.container[i].label %> </a>
               <ul class="sub-nav">
+
                 <% for(var j = 0; j < upNavigation.container[i].children.length;j++){ %>
                   <li><a
                       class=<%= upNavigation.container[i].children[j].isActive %> href=<%= upNavigation.container[i].children[j].link %>><%= upNavigation.container[i].children[j].label %></a>

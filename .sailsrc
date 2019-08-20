@@ -1,9 +1,14 @@
 {
   "generators": {
     "modules": {}
+<<<<<<< HEAD
+  }
+}
+=======
   },
   "_generatedWith": {
     "sails": "1.2.3",
     "sails-generate": "1.16.13"
   }
 }
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804

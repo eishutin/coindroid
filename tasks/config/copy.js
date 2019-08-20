@@ -1,4 +1,24 @@
 /**
+<<<<<<< HEAD
+ * `copy`
+ *
+ * ---------------------------------------------------------------
+ *
+ * Copy files and/or folders from your `assets/` directory into
+ * the web root (`.tmp/public`) so they can be served via HTTP,
+ * and also for further pre-processing by other Grunt tasks.
+ *
+ * #### Normal usage (`sails lift`)
+ * Copies all directories and files (except CoffeeScript and LESS)
+ * from the `assets/` folder into the web root -- conventionally a
+ * hidden directory located `.tmp/public`.
+ *
+ * #### Via the `build` tasklist (`sails www`)
+ * Copies all directories and files from the .tmp/public directory into a www directory.
+ *
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-copy
+=======
  * `tasks/config/copy`
  *
  * ---------------------------------------------------------------
@@ -7,6 +27,7 @@
  *
  * For more information, see:
  *   https://sailsjs.com/anatomy/tasks/config/copy.js
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  *
  */
 module.exports = function(grunt) {
@@ -27,6 +48,12 @@ module.exports = function(grunt) {
         src: ['**/*'],
         dest: 'www'
       }]
+<<<<<<< HEAD
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
+=======
     },
     beforeLinkBuildProd: {
       files: [{
@@ -62,4 +89,5 @@ module.exports = function(grunt) {
   // ```
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 };

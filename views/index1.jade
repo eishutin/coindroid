@@ -1,0 +1,333 @@
+doctype html(xmlns:style='http://www.w3.org/1999/xhtml')
+head
+  meta(charset='UTF-8')
+
+  title Coindroid
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  link(href='https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono:300,400,700&display=swap&subset=cyrillic-ext', rel='stylesheet')
+  link(rel='stylesheet', href='css/slick.css')
+  link(rel='stylesheet', href='css/jquery.fancybox.min.css')
+  link(rel='stylesheet', href='css/template.css')
+  link(rel='stylesheet', href='css/media.css')
+  script(src='scripts/jquery-3.4.1.min.js')
+  script(src='scripts/slick.min.js')
+  script(src='scripts/jquery.paroller.min.js')
+  script(src='scripts/parallax.min.js')
+  script(src='scripts/jquery.fancybox.min.js')
+  script(src='scripts/jquery.sticky-kit.min.js')
+body
+  header
+    .wrap
+      a.logo(href='/')
+        img(src= urlimg1 alt="Coindroid")
+      button.toggle-nav
+      nav.main-nav
+        i.icon.icon-close
+        ul
+          li.dropdown
+            - for(var i =0;i < upNavigation.container.length;i++)
+              a(href=upNavigation.container[i].link)= upNavigation.container[i].label
+              ul.sub-nav
+                if(upNavigation.container[i].children)
+                  - for(var j = 0; j < upNavigation.container[i].children.length;j++)
+                    li
+                      a(class=upNavigation.container[i].children[j].isActive href=upNavigation.container[i].children[j].link)= upNavigation.container[i].children[j].label
+                else
+                  li
+                    a(href=upNavigation.container[i].link)= upNavigation.container[i].label
+.select-wrap.select-lang
+  i.icon.icon-close
+  .current-lang
+    input.lang(type='text', value='ENG', disabled='')
+  .list-lang
+    ul
+      li
+        a(href=rusUrl)= rusLang
+      li
+        a(href=espUrl)= espLang
+      li
+        a(href=gerUrl)= gerLang
+button.btn.btn-login Login
+.user.hide
+  i.icon.icon-user
+  span Peter Parker
+.content
+  .block-top
+    .img-parallax-top
+      .wrap
+        h1.title= mainText1
+          .color-orange= mainText2
+        ul.social
+          li
+            a.twitterClass(href=twitterUrl)
+          li
+            a.facebookClass(href=facebookUrl)
+          li
+            a.soc2Class(href=soc2Url)
+          li
+            a.telegramClass(href=telegramUrl)
+          li
+            a.youtubeClass(href=youtubeUrl)
+          li
+            a.viberClass(href=viberUrl)
+          li
+            a.socClass(href=socUrl)
+          li
+            a.emailClass(href=emailUrl)
+  .block.block-perform
+    .wrap
+      .slider-perform
+        - for (var k = 0;k < possibilityStrip.length;k++)
+          .slide(id1=k)
+            .slide-img
+              i(class= possibilityStrip[k].urlImg)
+            .slide-text= possibilityStrip[k].text
+            .pop-text(id1='perform-pop-text-'+k)= possibilityStrip[k].popText
+            .pop-img(id1='perform-pop-img-'+k)= possibilityStrip[k].popImg
+    .perform-info
+      .wrap
+        .info-text
+          span.perform-info-text.color-orange
+        img.perform-info-image(src='', alt='')
+
+
+  .block.block-referal
+    .wrap
+      .col.col-info
+        .title.title-small
+          span.color-orange= referalText1
+        p.caption= referalText2
+      .col.col-form
+        .form-group
+          input.form-control(type='text', name='referal', placeholder=referalPlaceholder)
+          button.btn.btn-download(data-fancybox data-src='#modal-email')
+  .block.block-wallet
+    .wrap
+      .col.col-left
+        .fixed-left
+          .side-nav
+            ul
+              li.sub-item
+                a(href='#') Android wallet
+                ul.sub-nav
+                  li
+                    a(href='#') Coinomi (Electrum)
+                  li
+                    a(href='#') BreadWallet
+                  li
+                    a(href='#') Copay
+              li.sub-item
+                a(href='#') IOS wallet
+                ul.sub-nav
+                  li
+                    a(href='#') BreadWallet
+                  li
+                    a(href='#') Classic Electrum IOS
+              li
+                a(href='#') Electrum server
+              li
+                a(href='#') DAG chain
+              li
+                a(href='#') Blockchain
+          .mobile-select.custom-select
+            .value Android wallet
+            ul
+              li.sub-item
+                a(href='#') Android wallet
+                ul.sub-nav
+                  li
+                    a(href='#') Coinomi (Electrum)
+                  li
+                    a(href='#') BreadWallet
+                  li
+                    a(href='#') Copay
+              li.sub-item
+                a(href='#') IOS wallet
+                ul.sub-nav
+                  li
+                    a(href='#') BreadWallet
+                  li
+                    a(href='#') Classic Electrum IOS
+              li
+                a(href='#') Electrum server
+              li
+                a(href='#') DAG chain
+              li
+                a(href='#') Blockchain
+          button.btn.btn-dark(data-fancybox='', data-src='#modal-discount-code') I have discount code
+      .col.col-center
+        .text-wrap
+          .title.title-small
+            ANDROID
+            span.color-orange WALLET
+          .price
+            .current-price 500$
+            .old-price 500$
+        .desc
+          p= 'Lorem ipsum'
+          p= 'Sem integer'
+        ul.list-img
+          li
+            i.icon.icon-model
+          li
+            i.icon.icon-model-2
+          li
+            i.icon.icon-model
+          li
+            i.icon.icon-model
+          li
+            i.icon.icon-model-2
+        .group-btn
+          button.btn.btn-blue Calculate price
+          .link-video
+            i.icon.icon-video
+            a.link(href='https://www.youtube.com/watch?v=_sI_Ps7JSEk', data-fancybox='')= 'Watch video presentation'
+      .col.col-right
+        .fixed-right
+          .slider-phone
+            .slide
+              img(src='images/img-phone.png', alt='')
+            .slide
+              img(src='images/img-phone.png', alt='')
+          button.btn.btn-border Open in simulator
+  .block.block-contacts
+    .wrap
+      .col.col-left
+        .title.title-small
+      .col.col-right
+        ul.social
+          li
+            a.twitterClass(href=twitterUrl)
+          li
+            a.facebookClass(href=facebookUrl)
+          li
+            a.soc2Class(href=soc2Url)
+          li
+            a.telegramClass(href=telegramUrl)
+          li
+            a.youtubeClass(href=youtubeUrl)
+          li
+            a.viberClass(href=viberUrl)
+          li
+            a.socClass(href=socUrl)
+          li
+            a.emailClass(href=emailUrl)
+  .block.block-support
+    .wrap.no-flex
+      div
+        .wrap-text
+          .title
+            span.color-orange= supportStrip.head
+          p.desc= supportStrip.mainText
+          form(action=supportStrip.urlButton)
+            button.btn= supportStrip.buttonText
+        img.img-mobile(src= supportStripImg, alt='')
+
+  .block.block-works
+    .wrap.no-flex
+      .title
+        span.color-orange= ourWorksHead
+      .list-works
+        - var end=7
+        - var temp= 1
+        - for(var z = 0; z < ourWorksStrip.length; z++)
+          - temp= -1* temp
+          - while ((z!==end)&&(z!==ourWorksStrip.length))
+            .row
+              .item-work
+                .tooltip
+                  img(src=ourWorksStrip[z].urlImage, alt='')
+                  span.tooltiptext= ourWorksStrip[z].popText
+          end=end + temp
+  .block.block-info
+    .wrap
+      .title
+        a(href='#')= justEmailText
+      .img-parallax-bottom
+footer
+  .wrap
+    .col.col-left
+      a.logo(href='/')
+        img(src=urlimg1, alt='Coindroid')
+    .col.col-center
+      .footer-nav
+        - for(var p = 0; p < upNavigation.container.length;p++)
+          - div3=p+3
+          ul
+            - while((p!==div3)&&(p!==upNavigation.container.length))
+              li
+                a(href=upNavigation.container[p].link)= upNavigation.container[p].label
+              - p++
+          - p--
+      .select-wrap.select-lang.hide
+        i.icon.icon-close
+        .current-lang
+          input.lang(type='text', value='ENG', disabled='')
+        .list-lang
+          ul
+            li
+              a(href='#') RUS
+            li
+              a(href='#') ESP
+            li
+              a(href='#') GER
+    .col.col-right
+      ul.social
+        li
+          a.twitterClass(href=twitterUrl)
+        li
+          a.facebookClass(href=facebookUrl)
+        li
+          a.soc2Class(href=soc2Url)
+        li
+          a.telegramClass(href=telegramUrl)
+        li
+          a.youtubeClass(href=youtubeUrl)
+        li
+          a.viberClass(href=viberUrl)
+        li
+          a.socClass(href=socUrl)
+        li
+          a.emailClass(href=emailUrl)
+      .select-wrap.select-lang
+        i.icon.icon-close
+        .current-lang
+          input.lang(type='text', value='ENG', disabled)
+        .list-lang
+          ul
+            li
+              a(href='#') RUS
+            li
+              a(href='#') ESP
+            li
+              a(href='#') GER
+// Modal discount code
+#modal-discount-code.modal.modal-discount-code
+  .modal-wrap
+    form.form-discount(action='')
+      .form-group
+        label(for='code') I HAVE DISCOUNT CODE
+        input#code.form-control(type='text', placeholder='code')
+      .form-group
+        img(src='images/recapcha.png', alt='')
+      button.btn.btn-send Apply
+// Modal email
+#modal-email.modal.modal-email
+  .modal-wrap
+    i.downlIcon
+    .text= downlIconMessage
+// Modal success
+#modal-success.modal.modal-success
+  .modal-wrap
+    i.icon.icon-success
+
+    .text= '&Pcy;&ocy;&zcy;&dcy;&rcy;&acy;&vcy;&lcy;&yacy;&iecy;&mcy;! &Tcy;&ycy; &pcy;&ocy;&bcy;&iecy;&dcy;&icy;&lcy;, &scy;&kcy;&icy;&dcy;&kcy;&acy; 20%'
+// Modal fail
+#modal-fail.modal.modal-fail
+  .modal-wrap
+    i.icon.icon-fail
+
+    .text= '&Tcy;&acy;&kcy;&ocy;&gcy;&ocy; &kcy;&ocy;&dcy;&acy; &ncy;&iecy; &scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ucy;&iecy;&tcy;!'
+script(src='scripts/scripts.js')
+script(src='scripts/pop-up_block-perform_script.js')

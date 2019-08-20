@@ -1,4 +1,14 @@
 /**
+<<<<<<< HEAD
+ * `uglify`
+ *
+ * ---------------------------------------------------------------
+ *
+ * Minify client-side JavaScript files using UglifyJS.
+ *
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-uglify
+=======
  * `tasks/config/uglify`
  *
  * ---------------------------------------------------------------
@@ -7,6 +17,7 @@
  *
  * For more information, see:
  *   https://sailsjs.com/anatomy/tasks/config/uglify.js
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  *
  */
 module.exports = function(grunt) {
@@ -15,6 +26,13 @@ module.exports = function(grunt) {
     dist: {
       src: ['.tmp/public/concat/production.js'],
       dest: '.tmp/public/min/production.min.js'
+<<<<<<< HEAD
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+};
+=======
     },
     options: {
       mangle: {
@@ -62,3 +80,4 @@ module.exports = function(grunt) {
 
 };
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804

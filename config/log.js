@@ -7,7 +7,11 @@
  * allows for some pretty neat custom transports/adapters for log messages)
  *
  * For more information on the Sails logger, check out:
+<<<<<<< HEAD
+ * http://sailsjs.org/#!/documentation/concepts/Logging
+=======
  * https://sailsjs.com/docs/concepts/logging
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  */
 
 module.exports.log = {

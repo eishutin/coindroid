@@ -1,4 +1,19 @@
 /**
+<<<<<<< HEAD
+ * `watch`
+ *
+ * ---------------------------------------------------------------
+ *
+ * Run predefined tasks whenever watched file patterns are added, changed or deleted.
+ *
+ * Watch for changes on:
+ * - files in the `assets` folder
+ * - the `tasks/pipeline.js` file
+ * and re-run the appropriate tasks.
+ *
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-watch
+=======
  * `tasks/config/watch`
  *
  * ---------------------------------------------------------------
@@ -7,6 +22,7 @@
  *
  * For more information, see:
  *   https://sailsjs.com/anatomy/tasks/config/watch.js
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  *
  */
 module.exports = function(grunt) {
@@ -15,6 +31,16 @@ module.exports = function(grunt) {
     assets: {
 
       // Assets to watch:
+<<<<<<< HEAD
+      files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
+
+      // When assets are changed:
+      tasks: ['syncAssets' , 'linkAssets' ]
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+=======
       files: [
         'assets/**/*',
         'tasks/pipeline.js',
@@ -53,4 +79,5 @@ module.exports = function(grunt) {
   // ```
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 };

@@ -1,4 +1,14 @@
 /**
+<<<<<<< HEAD
+ * Default model configuration
+ * (sails.config.models)
+ *
+ * Unless you override them, the following properties will be included
+ * in each of your models.
+ *
+ * For more info on Sails models, see:
+ * http://sailsjs.org/#!/documentation/concepts/ORM
+=======
  * Default model settings
  * (sails.config.models)
  *
@@ -11,10 +21,20 @@
  * For more general background on Sails model settings, and how to configure
  * them on a project-wide or per-model basis, see:
  * https://sailsjs.com/docs/concepts/models-and-orm/model-settings
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  */
 
 module.exports.models = {
 
+<<<<<<< HEAD
+  /***************************************************************************
+  *                                                                          *
+  * Your app's default connection. i.e. the name of one of your app's        *
+  * connections (see `config/connections.js`)                                *
+  *                                                                          *
+  ***************************************************************************/
+  // connection: 'localDiskDb',
+=======
 
   /***************************************************************************
   *                                                                          *
@@ -37,12 +57,19 @@ module.exports.models = {
 
   // schema: true,
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 
   /***************************************************************************
   *                                                                          *
   * How and whether Sails will attempt to automatically rebuild the          *
   * tables/collections/etc. in your schema.                                  *
   *                                                                          *
+<<<<<<< HEAD
+  * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
+  *                                                                          *
+  ***************************************************************************/
+  migrate: 'alter'
+=======
   * > Note that, when running in a production environment, this will be      *
   * > automatically set to `migrate: 'safe'`, no matter what you configure   *
   * > here.  This is a failsafe to prevent Sails from accidentally running   *
@@ -120,5 +147,6 @@ module.exports.models = {
 
   cascadeOnDestroy: true
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 
 };

@@ -1,4 +1,15 @@
 /**
+<<<<<<< HEAD
+ * `clean`
+ *
+ * ---------------------------------------------------------------
+ *
+ * Remove the files and folders in your Sails app's web root
+ * (conventionally a hidden directory called `.tmp/public`).
+ *
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-clean
+=======
  * `tasks/config/clean`
  *
  * ---------------------------------------------------------------
@@ -7,12 +18,19 @@
  *
  * For more information, see:
  *   https://sailsjs.com/anatomy/tasks/config/clean.js
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  *
  */
 module.exports = function(grunt) {
 
   grunt.config.set('clean', {
     dev: ['.tmp/public/**'],
+<<<<<<< HEAD
+    build: ['www']
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-clean');
+=======
     build: ['www'],
     afterBuildProd: [
       'www/concat',
@@ -49,4 +67,5 @@ module.exports = function(grunt) {
   // ```
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 };

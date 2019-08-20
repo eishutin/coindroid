@@ -1,14 +1,29 @@
 /**
+<<<<<<< HEAD
+ * Compress CSS files.
+ *
+ * ---------------------------------------------------------------
+ *
+ * Minify the intermediate concatenated CSS stylesheet which was
+ * prepared by the `concat` task at `.tmp/public/concat/production.css`.
+ *
+=======
  * `tasks/config/cssmin`
  *
  * ---------------------------------------------------------------
  *
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  * Together with the `concat` task, this is the final step that minifies
  * all CSS files from `assets/styles/` (and potentially your LESS importer
  * file from `assets/styles/importer.less`)
  *
+<<<<<<< HEAD
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-cssmin
+=======
  * For more information, see:
  *   https://sailsjs.com/anatomy/tasks/config/cssmin.js
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
  *
  */
 module.exports = function(grunt) {
@@ -20,6 +35,9 @@ module.exports = function(grunt) {
     }
   });
 
+<<<<<<< HEAD
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+=======
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // This Grunt plugin is part of the default asset pipeline in Sails,
   // so it's already been automatically loaded for you at this point.
@@ -44,4 +62,5 @@ module.exports = function(grunt) {
   // ```
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 };

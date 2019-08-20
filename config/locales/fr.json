@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
+	"Welcome": "Bienvenue",
+	"A brand new app.": "Une toute nouvelle application."
+=======
   "Welcome": "Bienvenue",
   "A brand new app.": "Une toute nouvelle application."
+>>>>>>> 9f1d51b9b32024e632185381661f3dc8be4ae804
 }
